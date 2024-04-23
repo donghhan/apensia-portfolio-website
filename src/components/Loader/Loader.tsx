@@ -1,15 +1,14 @@
 import style from "./Loader.module.scss";
 
-export default function Loader() {
+export default function Loader(): JSX.Element {
+  const box = ["first", "second", "third", "fourth", "fifth", "sixth"];
+
   return (
     <aside className={style.loader_container}>
       <div className={style.loader_wrapper}>
-        <div id={style.first} className={style.box}></div>
-        <div id={style.second} className={style.box}></div>
-        <div id={style.third} className={style.box}></div>
-        <div id={style.fourth} className={style.box}></div>
-        <div id={style.fifth} className={style.box}></div>
-        <div id={style.sixth} className={style.box}></div>
+        {box.map((i) => (
+          <div key={i} id={style[i]} className={style.box} />
+        ))}
       </div>
     </aside>
   );
