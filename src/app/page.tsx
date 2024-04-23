@@ -1,5 +1,9 @@
-import Image from "next/image";
+import Loader from "@/components/Loader/Loader";
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <>
+      <Loader />
+    </>
+  );
 }

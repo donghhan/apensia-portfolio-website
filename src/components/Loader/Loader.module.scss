@@ -1,0 +1,59 @@
+@use "../../styles/variables/color" as color;
+@use "./Loader.animation.scss";
+
+@keyframes moveGradient {
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+.loader_container {
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .loader_wrapper {
+    width: 10rem;
+    height: 10rem;
+    transform: rotate(-45deg);
+    position: relative;
+
+    .box {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: color.$loader-gradient;
+      background-position: 0% 50%;
+      background-size: 1000% 1000%;
+      visibility: hidden;
+    }
+
+    #first {
+      animation: oneMove 3.5s infinite, moveGradient 15s infinite;
+    }
+
+    #second {
+      animation: twoMove 3.5s 0.15s infinite, moveGradient 15s infinite;
+    }
+
+    #third {
+      animation: threeMove 3.5s 0.3s infinite, moveGradient 15s infinite;
+    }
+
+    #fourth {
+      animation: fourMove 3.5s 0.575s infinite, moveGradient 15s infinite;
+    }
+
+    #fifth {
+      animation: fiveMove 3.5s 0.725s infinite, moveGradient 15s infinite;
+    }
+
+    #sixth {
+      animation: sixMove 3.5s 0.875s infinite, moveGradient 15s infinite;
+    }
+  }
+}
